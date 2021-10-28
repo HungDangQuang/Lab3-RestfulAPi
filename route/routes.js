@@ -7,10 +7,10 @@ module.exports = function(app){
     * @swagger
     * /:
     *   post:
-    *     description: send message!
+    *     description: insert customer!
     *     responses:
     *       200:
-    *         description: Returns a mysterious string.
+    *         description: Returns 1 or 0 with err
     */
     app.post("/addCustomer", function(req,res){
         var newCustomer = Customer({
@@ -34,7 +34,7 @@ module.exports = function(app){
     *     description: send message!
     *     responses:
     *       200:
-    *         description: Returns a mysterious string.
+    *         description: Returns 1 with list of customers or 0 with err
     */
     app.get("/getList", function(req,res){
         Customer.find(function(err, data){
